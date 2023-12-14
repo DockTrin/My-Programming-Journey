@@ -4,16 +4,21 @@
 
 int main()
 {
-    double num;
+    double num, markup_percentage;
     int percent;
 //Gets input(number)from the user
     printf("Enter a value: ");
     scanf("%lf", &num);
+    printf("Enter mark-up value(if any, else enter 0): ");
+    scanf("%lf", &markup_percentage);
+    double mark_up = (num * markup_percentage) / 100;
+    double subtotal = mark_up + num;
+    printf("Sub-total = %0.2lf\n", subtotal);
 
 //Calculates VAT from user input(number)
-    double vat = 7.5 * num / 100;
+    double vat = 7.5 * subtotal / 100;
     printf("VAT(7.5%) = %0.2lf\n", vat);
-    double total = vat + num;
+    double total = vat + subtotal;
     printf("Total = %0.2lf\n", total);
 
 //Gets percentage value from the user
@@ -21,7 +26,7 @@ int main()
     scanf("%i", &percent);
 
 //calculates percentage from user input(number) and display the final results/output
-    double percentage = percent * num/100;
+    double percentage = percent * subtotal/100;
     double percentage_vat = 7.5 * percentage/100;
     double grandTotal = percentage_vat + percentage;
 
