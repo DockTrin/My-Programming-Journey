@@ -8,7 +8,7 @@ int main()
 /*Gets input(amount)from the user*/
     printf("Enter amount(initial cost): ");
     scanf("%lf", &num);
-    printf("Enter mark-up Percentage(if any, else enter 0): ");
+    printf("Enter mark-up Percentage(if any, else enter 0)%:");
     scanf("%lf", &markup_percentage);
     double mark_up = (num * markup_percentage) / 100;
     printf("15% Mark-up = %0.2lf\n",mark_up);
@@ -22,7 +22,7 @@ int main()
     printf("Total = %0.2lf\n", total);
 
 /*Gets percentage value from the user*/
-    printf("Enter terms of Payment(i.e installmental payment in percentage before or after job completion): ");
+    printf("Enter terms of Payment(i.e installmental payment in percentage before or after job completion)%:");
     scanf("%i", &percent);
 
 /*calculates percentage from user input(number) and display 
@@ -43,6 +43,10 @@ int main()
     double TotalAfterDeductions = percentage - hidden_charges;
     printf("\n Total Amount(after vat & Hidden charges deducted) = %3.2lf", TotalAfterDeductions);
 
+/* Calculates Net-profit(profit made by vendor)*/
+	float netprofit = TotalAfterDeductions - num + mark_up;
+	printf("\nNet Profit = %0.2f", netprofit);
+
 
 /*
     //Getting input(values)from user
@@ -61,3 +65,4 @@ int main()
 */
     return 0;
 }
+ 
