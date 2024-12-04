@@ -11,7 +11,7 @@ int main()
     printf("Enter mark-up Percentage(if any, else enter 0)%:");
     scanf("%lf", &markup_percentage);
     double mark_up = (num * markup_percentage) / 100;
-    printf("15% Mark-up = %0.2lf\n",mark_up);
+    printf("%0.0lf%% Mark-up = %0.2lf\n",markup_percentage,mark_up);
     double subtotal = mark_up + num;
     printf("Sub-total = %0.2lf\n", subtotal);
 
